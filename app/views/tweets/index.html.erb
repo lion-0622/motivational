@@ -1,7 +1,7 @@
 
 
 <div class="tweets-container">
-<h7 class="tweet_title">あなたの心動かされたフレーズ</h7>
+<h7 class="tweet_title">Your Inspiring Words</h7>
   <% @tweets.each do |t| %>
     <div class="tweet">
       <div class="main-box">
@@ -37,5 +37,8 @@
   <% end %>
 </div>
 
-<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<%= stylesheet_link_tag 'index', :media => "all" %>
+<div class="button015">
+  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  <%= stylesheet_link_tag 'index', :media => "all" %>
+  <a href="#"><span>ログアウト</span></a>
+</div>
