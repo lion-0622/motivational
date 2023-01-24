@@ -1,0 +1,21 @@
+databases:
+  - name: Motivational Words_DB
+    databaseName: motivational words_db
+    user: Motivational
+    region: singapore
+
+services:
+  - type: web
+    name: Motivational Words
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: postgres://motivational_words_db_user:wNn6elr7sylzu91HmvJgHSxhMOffoRwz@dpg-cf7u33un6mplr408kjsg-a/motivational_words_db
+        fromDatabase:
+          name: Motivational Words_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
