@@ -1,7 +1,5 @@
-
-
 <div class="tweets-container">
-<h7 class="tweet_title">Your Inspiring Words</h7>
+<h4 class="tweet_title">Your Inspiring Words</h4>
   <% @tweets.each do |t| %>
     <div class="tweet">
       <div class="main-box">
@@ -11,9 +9,9 @@
         <%= t.body %><br>
       </div>
         <div class="right-container">
-          <%= link_to "詳細", tweet_path(t.id) %>
-          <%= link_to "編集", edit_tweet_path(t.id) %>
-          <%= button_to "削除", tweet_path(t.id), method: :delete %>
+          <%= link_to "DETAIL", tweet_path(t.id) %>
+          <%= link_to "EDIT", edit_tweet_path(t.id) %>
+          <%= button_to "DELETE", tweet_path(t.id), method: :delete %>
         </div>
       </div>
         <p class="time"><%= t.created_at %></p>
@@ -27,18 +25,17 @@
     <% else %>
         <%= button_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
             <i class="fa-regular fa-face-kiss-wink-heart"></i>
-            <p>いいね</p><%= t.likes.count %>
+            <p>LIKE</p><%= t.likes.count %>
         <% end %>
     <% end %>
  <% else %>
     <i class="fa-regular fa-face-kiss-wink-heart"></i>
     <p>いいねの数 = </p><%= t.likes.count %>
  <% end %>
-  <% end %>
+ <div class="logout">
+   <%= button_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+ </div>
+ <% end %>
 </div>
 
-<div class="button015">
-  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-  <%= stylesheet_link_tag 'index', :media => "all" %>
-  <a href="#"><span>ログアウト</span></a>
-</div>
+<%= stylesheet_link_tag 'index', :media => "all" %>

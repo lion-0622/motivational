@@ -33,6 +33,7 @@
   header a {
     color: white; 
     text-decoration: none; 
+    font-family: 'Segoe UI Black',sans-serif;
   }
   header h1 {
     color: white;
@@ -50,7 +51,7 @@
     margin-right: 40px;
   }
   .tweet_title{
-    font-family: 'Yu Gothic UI',sans-serif;
+    font-family: 'Segoe UI Black',sans-serif;
   }
   footer {
     color: white;
@@ -63,4 +64,3 @@
     position: fixed;
     justify-content: flex-end;
   }
-
