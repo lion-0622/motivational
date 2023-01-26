@@ -1,18 +1,18 @@
 <%= stylesheet_link_tag 'new', :media => "all" %>
 
 <div class="post-container">
-    <p class="title">投稿フォーム</p>
+    <p class="title">Post Form</p>
     <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
-    <%= f.label :フレーズ %>
+    <%= f.label :Words %>
         <br>
         <%= f.text_field :title,size: 140%>
         <br>
-        <%= f.label :名前 %>
+        <%= f.label :Name %>
         <%= f.text_field :name,size: 140%>
         <br>
-        <%= f.label :理由 %>
+        <%= f.label :Reason %>
         <%= f.text_field :body,size: 140%>
-    <%= f.submit "送信"%>
+    <%= f.submit "Send"%>
     <br>
     <% end %>
 

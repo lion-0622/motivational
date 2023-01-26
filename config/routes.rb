@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+    devise_for :user
     get 'tweets/genki' => 'tweets#genki'
     get 'tweets/yaruki' => 'tweets#yaruki'
+   
    
   resources :tweets do
     
